@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Off the Map · Emil Kuli-Zade</title>
+  <meta name="robots" content="noindex">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,400..700,0..100,0..1;1,9..144,400..700,0..100,0..1&family=Nunito:wght@400..800&display=swap">
+  <script>
+    (function () {
+      var t = null;
+      try { t = localStorage.getItem('folio.theme'); } catch (e) {}
+      if (t === 'day' || t === 'night') document.documentElement.setAttribute('data-theme', t);
+    })();
+  </script>
+  <style>
+    :root { --paper: #f6f0e3; --ink: #2b2236; --ink-2: #574d63; --gold: #b8811f; --glow: #f0c674; --line: rgba(43, 34, 54, .26); color-scheme: light; }
+    :root[data-theme="night"] { --paper: #13112a; --ink: #f1e8d6; --ink-2: #c6bdd2; --gold: #e7b75f; --glow: #f3cf7a; --line: rgba(241, 232, 214, .24); color-scheme: dark; }
+    @media (prefers-color-scheme: dark) {
+      :root:not([data-theme]) { --paper: #13112a; --ink: #f1e8d6; --ink-2: #c6bdd2; --gold: #e7b75f; --glow: #f3cf7a; --line: rgba(241, 232, 214, .24); color-scheme: dark; }
+    }
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+    body { margin: 0; display: grid; place-items: center; padding: 24px 16px; background: var(--paper); color: var(--ink); font: 400 1.0625rem/1.6 "Nunito", system-ui, sans-serif; text-align: center; }
+    .lantern { width: 72px; height: 72px; margin: 0 auto 18px; color: var(--gold); filter: drop-shadow(0 0 18px var(--glow)); animation: sway 4s ease-in-out infinite; transform-origin: 50% 0; }
+    @keyframes sway { 50% { transform: rotate(6deg); } }
+    svg { fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+    h1 { font-family: "Fraunces", Georgia, serif; font-variation-settings: "SOFT" 100, "WONK" 1; font-weight: 600; font-size: clamp(2.2rem, 7vw, 3.4rem); line-height: 1.05; margin: 0 0 .6rem; }
+    p { color: var(--ink-2); max-width: 30rem; margin: 0 auto 1.6rem; }
+    .row { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; }
+    a { display: inline-flex; align-items: center; padding: .75em 1.25em; border-radius: 999px; border: 1.5px solid var(--line); color: var(--ink); font-weight: 700; text-decoration: none; }
+    a.primary { background: var(--ink); color: var(--paper); border-color: var(--ink); }
+    a:hover { border-color: var(--gold); }
+    a:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
+    @media (prefers-reduced-motion: reduce) { .lantern { animation: none; } }
+  </style>
+</head>
+<body>
+  <main>
+    <svg class="lantern" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5.5h6M12 2.5v3"/><path d="M8 7.5h8l-1 10H9z"/><path d="M7 20.5h10M9.5 17.5v3M14.5 17.5v3"/><circle cx="12" cy="12.5" r="1.8" fill="currentColor" stroke="none"/></svg>
+    <h1>You&rsquo;ve wandered off the map</h1>
+    <p>Even the best adventurers take a wrong turn. This path doesn&rsquo;t exist, but the road back is right here.</p>
+    <div class="row">
+      <a class="primary" href="/folio/">Back to the folio</a>
+      <a href="/">Home</a>
+    </div>
+  </main>
+</body>
+</html>

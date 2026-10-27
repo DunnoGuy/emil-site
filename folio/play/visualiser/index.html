@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Music Visualiser · Emil Kuli-Zade</title>
+  <meta name="description" content="A p5.js and GLSL music visualiser, played over original piano compositions by Emil Kuli-Zade.">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+
+  <script src="lib/p5.min.js"></script>
+  <script src="lib/p5.sound.js"></script>
+
+  <script src="src/sketch.js"></script>
+  <script src="src/visualisations.js"></script>
+  <script src="src/utils.js"></script>
+  <script src="src/control/controlsAndInput.js"></script>
+  <script src="src/control/controlButton.js"></script>
+  <script src="src/control/playbackButton.js"></script>
+  <script src="src/control/nextButton.js"></script>
+
+  <script src="src/extentions/wavepattern.js"></script>
+  <script src="src/extentions/spectrum.js"></script>
+  <script src="src/extentions/trackNavigator.js"></script>
+  <script src="src/extentions/glowingMoth.js"></script>
+  <script src="src/extentions/smokingTorus.js"></script>
+
+  <style>
+    body { padding: 0; margin: 0; background: #000; overflow: hidden; }
+    /* Folio overlay: sits on top of the original sketch without touching its code. */
+    .folio-bar {
+      position: fixed; top: 12px; right: 12px; z-index: 10;
+      display: flex; flex-wrap: wrap; align-items: center; justify-content: flex-end; gap: 6px;
+      max-width: calc(100vw - 110px);
+      font: 700 13px/1.2 "Segoe UI", system-ui, -apple-system, sans-serif; color: #f1e8d6;
+      transition: opacity .6s;
+    }
+    .folio-bar.idle { opacity: .25; }
+    .folio-bar:hover, .folio-bar:focus-within { opacity: 1; }
+    .folio-bar a, .folio-bar button {
+      font: inherit; color: inherit; text-decoration: none; cursor: pointer;
+      padding: 7px 12px; border-radius: 999px;
+      border: 1px solid rgba(241, 232, 214, .28); background: rgba(19, 17, 42, .72);
+      backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px);
+    }
+    .folio-bar a:hover, .folio-bar button:hover { border-color: #e7b75f; }
+    .folio-bar button[aria-pressed="true"] { background: #e7b75f; color: #13112a; border-color: #e7b75f; }
+    .folio-bar a:focus-visible, .folio-bar button:focus-visible { outline: 2px solid #e7b75f; outline-offset: 2px; }
+    .folio-hint {
+      position: fixed; left: 50%; bottom: 18px; transform: translateX(-50%); z-index: 10;
+      margin: 0; padding: 8px 14px; border-radius: 999px; max-width: calc(100vw - 32px); text-align: center;
+      font: 600 13px/1.4 "Segoe UI", system-ui, -apple-system, sans-serif; color: #c6bdd2;
+      background: rgba(19, 17, 42, .72); pointer-events: none; transition: opacity 1s;
+    }
+    .folio-hint.gone { opacity: 0; }
+  </style>
+</head>
+<body>
+  <nav class="folio-bar" id="folio-bar" aria-label="Visualiser controls">
+    <a href="../../#quests">← Back to the folio</a>
+    <button type="button" data-vis="spectrum">Spectrum</button>
+    <button type="button" data-vis="wavepattern">Waveform</button>
+    <button type="button" data-vis="track navigator">Track navigator</button>
+    <button type="button" data-vis="glowing moth">Glowing moth</button>
+  </nav>
+  <p class="folio-hint" id="folio-hint">Press ▶ in the top-left to play · ▶▶ for the next piece · click the canvas for fullscreen</p>
+
+  <script>
+    (function () {
+      var bar = document.getElementById('folio-bar');
+      var hint = document.getElementById('folio-hint');
+      var buttons = bar.querySelectorAll('[data-vis]');
+
+      // p5 listens for clicks on window; keep overlay clicks from toggling fullscreen.
+      ['click', 'mousedown', 'mouseup', 'touchstart', 'touchend'].forEach(function (type) {
+        bar.addEventListener(type, function (e) { e.stopPropagation(); });
+      });
+
+      buttons.forEach(function (b) {
+        b.addEventListener('click', function () {
+          if (window.vis) window.vis.selectVisual(b.dataset.vis);
+          sync();
+        });
+      });
+
+      // Keys 1–5 also switch visuals inside the sketch, so keep the buttons in step.
+      function sync() {
+        var current = window.vis && window.vis.selectedVisual && window.vis.selectedVisual.name;
+        buttons.forEach(function (b) { b.setAttribute('aria-pressed', String(b.dataset.vis === current)); });
+      }
+      setInterval(sync, 400);
+
+      var idle;
+      function wake() {
+        bar.classList.remove('idle');
+        clearTimeout(idle);
+        idle = setTimeout(function () { bar.classList.add('idle'); }, 3500);
+      }
+      ['mousemove', 'touchstart', 'keydown'].forEach(function (t) { window.addEventListener(t, wake, { passive: true }); });
+      wake();
+      setTimeout(function () { hint.classList.add('gone'); }, 9000);
+    })();
+  </script>
+</body>
+</html>

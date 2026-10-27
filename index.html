@@ -1,1 +1,131 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Emil Kuli-Zade</title>
+  <meta name="description" content="Emil Kuli-Zade: engineer in Melbourne, Australia. Infrastructure, security and games.">
+  <link rel="canonical" href="https://emil.kuli-zade.com/">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://emil.kuli-zade.com/">
+  <meta property="og:title" content="Emil Kuli-Zade">
+  <meta property="og:description" content="Engineer in Melbourne, Australia. Infrastructure, security and games.">
+  <meta property="og:image" content="https://emil.kuli-zade.com/assets/og-folio.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#f6f0e3" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#13112a" media="(prefers-color-scheme: dark)">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,400..700,0..100,0..1;1,9..144,400..700,0..100,0..1&family=Nunito:wght@400..800&display=swap">
+  <script>
+    (function () {
+      var t = null;
+      try { t = localStorage.getItem('folio.theme'); } catch (e) {}
+      if (t === 'day' || t === 'night') document.documentElement.setAttribute('data-theme', t);
+    })();
+  </script>
+  <style>
+    :root {
+      --paper: #f6f0e3; --card: #fcf8ef; --ink: #2b2236; --ink-2: #574d63; --ink-3: #8a8094;
+      --line: rgba(43, 34, 54, .14); --gold: #b8811f; --gold-ink: #87590d; --wood: #8a6a46; --wood-dark: #6c5034;
+      color-scheme: light;
+    }
+    :root[data-theme="night"] {
+      --paper: #13112a; --card: #1e1b40; --ink: #f1e8d6; --ink-2: #c6bdd2; --ink-3: #9088a6;
+      --line: rgba(241, 232, 214, .14); --gold: #e7b75f; --gold-ink: #f0c674; --wood: #a5825a; --wood-dark: #7a5c3c;
+      color-scheme: dark;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root:not([data-theme]) {
+        --paper: #13112a; --card: #1e1b40; --ink: #f1e8d6; --ink-2: #c6bdd2; --ink-3: #9088a6;
+        --line: rgba(241, 232, 214, .14); --gold: #e7b75f; --gold-ink: #f0c674; --wood: #a5825a; --wood-dark: #7a5c3c;
+        color-scheme: dark;
+      }
+    }
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+    body {
+      margin: 0; background: var(--paper); color: var(--ink);
+      font: 400 1.0625rem/1.6 "Nunito", "Segoe UI", system-ui, sans-serif;
+      display: grid; place-items: center; padding: 32px 16px;
+    }
+    main { width: min(560px, 100%); text-align: center; }
+    h1 {
+      font-family: "Fraunces", Georgia, serif; font-variation-settings: "SOFT" 100, "WONK" 1;
+      font-weight: 600; font-size: clamp(2.4rem, 8vw, 3.6rem); line-height: 1.05; letter-spacing: -.015em; margin: 0 0 .4rem;
+    }
+    .sub { font-family: "Fraunces", Georgia, serif; font-style: italic; color: var(--ink-2); font-size: 1.15rem; margin: 0; }
+    .place { color: var(--ink-3); font-weight: 700; font-size: .92rem; margin: .5rem 0 0; }
 
+    /* The signpost: every path on this site gets a board. */
+    .post { position: relative; margin: 44px auto 0; width: min(380px, 100%); padding: 18px 0 70px; }
+    .post::before {
+      content: ""; position: absolute; left: 50%; top: 0; bottom: 0; width: 16px; margin-left: -8px;
+      background: linear-gradient(90deg, var(--wood-dark), var(--wood) 45%, var(--wood-dark)); border-radius: 6px 6px 2px 2px;
+    }
+    .post::after {
+      content: ""; position: absolute; left: 50%; bottom: -6px; width: 140px; height: 14px; margin-left: -70px;
+      background: radial-gradient(closest-side, var(--line), transparent); border-radius: 50%;
+    }
+    .boards { list-style: none; margin: 0; padding: 0; display: grid; gap: 14px; position: relative; }
+    .board {
+      --tilt: -2deg;
+      position: relative; display: flex; align-items: center; gap: 10px;
+      width: 88%; padding: 14px 40px 14px 22px;
+      background: var(--card); color: var(--ink); text-decoration: none;
+      font-family: "Fraunces", Georgia, serif; font-weight: 600; font-size: 1.15rem; text-align: left;
+      clip-path: polygon(0 0, calc(100% - 26px) 0, 100% 50%, calc(100% - 26px) 100%, 0 100%);
+      filter: drop-shadow(0 6px 10px rgba(0, 0, 0, .15));
+      transform: rotate(var(--tilt)); transform-origin: 50% 50%;
+      transition: transform .35s cubic-bezier(.3, 1.6, .5, 1);
+      border: 0;
+    }
+    .board small { display: block; font-family: "Nunito", system-ui, sans-serif; font-weight: 800; font-size: .7rem; letter-spacing: .14em; text-transform: uppercase; color: var(--gold-ink); }
+    .board.left {
+      margin-left: auto; padding: 14px 22px 14px 40px; text-align: right; justify-content: flex-end; --tilt: 2deg;
+      clip-path: polygon(26px 0, 100% 0, 100% 100%, 26px 100%, 0 50%);
+    }
+    .board.main { background: var(--ink); color: var(--paper); font-size: 1.3rem; padding-block: 18px; }
+    .board.main small { color: var(--gold); }
+    .board:hover, .board:focus-visible { transform: rotate(0) translateX(6px); }
+    .board.left:hover, .board.left:focus-visible { transform: rotate(0) translateX(-6px); }
+    .board:focus-visible { outline: none; filter: drop-shadow(0 0 0 var(--gold)) drop-shadow(0 0 6px var(--gold)); }
+    button.board { cursor: pointer; font: inherit; font-family: "Fraunces", Georgia, serif; font-weight: 600; font-size: 1.15rem; }
+    .reveal-mail { position: relative; margin: 14px 0 0; min-height: 1.6em; font-weight: 700; }
+    .reveal-mail a { color: var(--gold-ink); background: var(--card); padding: 6px 14px; border-radius: 999px; box-shadow: 0 4px 12px rgba(0, 0, 0, .1); }
+    footer { margin-top: 36px; font-size: .85rem; color: var(--ink-3); }
+    @media (prefers-reduced-motion: reduce) { .board { transition: none; } }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Emil Kuli-Zade</h1>
+    <p class="sub">Infrastructure, security &amp; games</p>
+    <p class="place">Southbank, Melbourne · Australia</p>
+
+    <nav class="post" aria-label="Where to next">
+      <ul class="boards">
+        <li><a class="board main" href="/folio/"><span><small>Portfolio</small>Game development folio</span></a></li>
+        <li><a class="board left" href="https://www.linkedin.com/in/emil-kuli-zade/" rel="noopener"><span><small>Career</small>LinkedIn</span></a></li>
+        <li><button class="board" type="button" id="mail-board"><span><small>Say hello</small>Email</span></button></li>
+      </ul>
+      <p class="reveal-mail" id="mail-reveal" aria-live="polite"></p>
+    </nav>
+  </main>
+
+  <script>
+    document.getElementById('mail-board').addEventListener('click', function () {
+      var a = ['emil', 'kuli-zade.com'].join('@');
+      var p = document.getElementById('mail-reveal');
+      p.innerHTML = '';
+      var link = document.createElement('a');
+      link.href = 'mailto:' + a;
+      link.textContent = a;
+      p.appendChild(link);
+      link.focus();
+    });
+  </script>
+</body>
+</html>

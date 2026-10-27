@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://emil.kuli-zade.com/sitemap.xml

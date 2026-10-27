@@ -1,1 +1,862 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Emil Kuli-Zade · Game Development Folio</title>
+  <meta name="description" content="Game developer with 14+ years in IT infrastructure and cybersecurity. BSc Computer Science (Games Development), Goldsmiths, University of London. Based in Melbourne, with full working rights across Australia.">
+  <link rel="canonical" href="https://emil.kuli-zade.com/folio/">
+  <meta name="theme-color" content="#f6f0e3" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#13112a" media="(prefers-color-scheme: dark)">
 
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://emil.kuli-zade.com/folio/">
+  <meta property="og:title" content="Emil Kuli-Zade · Game Development Folio">
+  <meta property="og:description" content="A portfolio in six chapters: games, tools, and fourteen years of keeping castles standing. Melbourne, Australia.">
+  <meta property="og:image" content="https://emil.kuli-zade.com/assets/og-folio.png">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,400..700,0..100,0..1;1,9..144,400..700,0..100,0..1&family=Nunito:ital,wght@0,400..800;1,400..700&display=swap">
+  <link rel="stylesheet" href="assets/css/folio.css">
+
+  <script>
+    // Set the time of day before first paint so the page never flashes the wrong theme.
+    (function () {
+      var t = null;
+      try { t = localStorage.getItem('folio.theme'); } catch (e) {}
+      if (t !== 'day' && t !== 'night') {
+        t = window.matchMedia && matchMedia('(prefers-color-scheme: dark)').matches ? 'night' : 'day';
+      }
+      document.documentElement.setAttribute('data-theme', t);
+      document.documentElement.classList.add('js');
+    })();
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Emil Kuli-Zade",
+    "url": "https://emil.kuli-zade.com/folio/",
+    "jobTitle": "Infrastructure & security engineer, game developer",
+    "address": { "@type": "PostalAddress", "addressLocality": "Melbourne", "addressRegion": "VIC", "addressCountry": "AU" },
+    "alumniOf": "Goldsmiths, University of London",
+    "sameAs": ["https://www.linkedin.com/in/emil-kuli-zade/", "https://github.com/DunnoGuy"]
+  }
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#hero">Skip to content</a>
+
+  <!-- Icon sprite: hand-drawn-ish line icons, 24×24, stroke-based -->
+  <svg width="0" height="0" class="sprite" aria-hidden="true" focusable="false">
+    <defs>
+      <symbol id="i-door" viewBox="0 0 24 24"><path d="M6 21V10a6 6 0 0 1 12 0v11"/><path d="M3.5 21h17"/><path d="M12 4v17"/><circle cx="14.6" cy="14" r=".7" fill="currentColor" stroke="none"/></symbol>
+      <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3l7.5 3v5.2c0 4.6-3.1 8.3-7.5 9.8-4.4-1.5-7.5-5.2-7.5-9.8V6z"/><path d="M12 8.2l1.2 2.4 2.6.4-1.9 1.8.5 2.6-2.4-1.3-2.4 1.3.5-2.6-1.9-1.8 2.6-.4z"/></symbol>
+      <symbol id="i-scroll" viewBox="0 0 24 24"><path d="M7.5 3.5h10a2.5 2.5 0 0 1 2.5 2.5v1.5h-4"/><path d="M16 6v12a2.5 2.5 0 0 1-2.5 2.5h-8A2.5 2.5 0 0 1 3 18v-1h10.5v1a2.5 2.5 0 0 0 2.5 2.5"/><path d="M7.5 3.5A2.5 2.5 0 0 0 5 6v11"/><path d="M8.5 8.5h4.5M8.5 12h4.5"/></symbol>
+      <symbol id="i-tower" viewBox="0 0 24 24"><path d="M5 9.5V3.5h2.6v2h2.1v-2h4.6v2h2.1v-2H19v6z"/><path d="M6.5 9.5V21h11V9.5"/><path d="M10.4 21v-3.2a1.6 1.6 0 0 1 3.2 0V21"/><path d="M12 12.2v2"/><path d="M4 21h16"/></symbol>
+      <symbol id="i-flag" viewBox="0 0 24 24"><path d="M5.5 21V3.5"/><path d="M5.5 4.5h12.5l-3 4 3 4H5.5"/><path d="M3.5 21h4"/></symbol>
+      <symbol id="i-quill" viewBox="0 0 24 24"><path d="M20 3.5C13 4.5 8.2 9.5 6.3 17.2L5 20.5"/><path d="M20 3.5c-.6 6.7-4.9 11.6-11.8 12.6"/><path d="M10.5 13l3.2-3.2"/><path d="M4 20.5h7"/></symbol>
+      <symbol id="i-mug" viewBox="0 0 24 24"><path d="M4.5 9h11v8.5a3 3 0 0 1-3 3h-5a3 3 0 0 1-3-3z"/><path d="M15.5 11h1.7a2.6 2.6 0 0 1 0 5.2h-1.7"/><path d="M7.5 6c0-1.2 1.2-1.2 1.2-2.5M11.5 6c0-1.2 1.2-1.2 1.2-2.5"/></symbol>
+      <symbol id="i-trophy" viewBox="0 0 24 24"><path d="M8 4h8v5.5a4 4 0 0 1-8 0z"/><path d="M8 5.5H5.2a3.2 3.2 0 0 0 3.2 4.3M16 5.5h2.8a3.2 3.2 0 0 1-3.2 4.3"/><path d="M12 13.5v3.5M9 20.5h6M10 17h4v3.5h-4z"/></symbol>
+      <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M5.3 18.7l1.6-1.6M17.1 6.9l1.6-1.6"/></symbol>
+      <symbol id="i-moon" viewBox="0 0 24 24"><path d="M19.5 14.8A8 8 0 1 1 9.2 4.5a6.4 6.4 0 0 0 10.3 10.3z"/></symbol>
+      <symbol id="i-play" viewBox="0 0 24 24"><path d="M8 5.5l11 6.5-11 6.5z" fill="currentColor"/></symbol>
+      <symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></symbol>
+      <symbol id="i-down" viewBox="0 0 24 24"><path d="M12 4v15M6 13l6 6 6-6"/></symbol>
+      <symbol id="i-left" viewBox="0 0 24 24"><path d="M19 12H5M11 6l-6 6 6 6"/></symbol>
+      <symbol id="i-right" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+      <symbol id="i-external" viewBox="0 0 24 24"><path d="M14 4h6v6M20 4l-8.5 8.5"/><path d="M18 14v4.5A1.5 1.5 0 0 1 16.5 20h-11A1.5 1.5 0 0 1 4 18.5v-11A1.5 1.5 0 0 1 5.5 6H10"/></symbol>
+      <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s-7-6.1-7-11.4a7 7 0 0 1 14 0C19 14.9 12 21 12 21z"/><circle cx="12" cy="9.6" r="2.5"/></symbol>
+      <symbol id="i-key" viewBox="0 0 24 24"><circle cx="8" cy="12" r="4"/><path d="M12 12h9M18 12v3M21 12v2.2"/></symbol>
+      <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5.5" width="18" height="13" rx="2"/><path d="M3.5 7l8.5 6 8.5-6"/></symbol>
+      <symbol id="i-raven" viewBox="0 0 24 24"><path d="M2.5 14.5c3.2.2 5.6-1.5 7.4-4.4 1.6-2.6 4.1-3.8 6.6-3l1.5.5 3.5-.6-2.6 2.3c.3 3.7-2 7-6.1 7.9l-3.3 3.8.6-3.6c-3.3-.2-5.9-1.2-7.6-2.9z"/><circle cx="16.4" cy="8.4" r=".6" fill="currentColor" stroke="none"/></symbol>
+      <symbol id="i-hammer" viewBox="0 0 24 24"><path d="M12.7 3.5l7.8 7.8-2.8 2.8-7.8-7.8z"/><path d="M13.8 10.2L4.5 19.5"/></symbol>
+      <symbol id="i-map" viewBox="0 0 24 24"><path d="M3 6.5l6-2.5 6 2.5 6-2.5v13.5l-6 2.5-6-2.5-6 2.5z"/><path d="M9 4v13.5M15 6.5V20"/></symbol>
+      <symbol id="i-sparkle" viewBox="0 0 24 24"><path d="M12 3l1.9 6.1L20 11l-6.1 1.9L12 19l-1.9-6.1L4 11l6.1-1.9z"/></symbol>
+      <symbol id="i-book" viewBox="0 0 24 24"><path d="M5 4.5A1.5 1.5 0 0 1 6.5 3H19v15H6.5A1.5 1.5 0 0 0 5 19.5z"/><path d="M5 19.5A1.5 1.5 0 0 0 6.5 21H19"/><path d="M9 7.5h6"/></symbol>
+      <symbol id="i-copy" viewBox="0 0 24 24"><rect x="8.5" y="8.5" width="11.5" height="11.5" rx="2"/><path d="M15.5 8.5V5.5a1.5 1.5 0 0 0-1.5-1.5H5.5A1.5 1.5 0 0 0 4 5.5V14a1.5 1.5 0 0 0 1.5 1.5h3"/></symbol>
+      <symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></symbol>
+      <symbol id="i-heart" viewBox="0 0 24 24"><path d="M12 20s-7.5-4.6-7.5-10A4.3 4.3 0 0 1 12 7.4 4.3 4.3 0 0 1 19.5 10c0 5.4-7.5 10-7.5 10z"/></symbol>
+      <symbol id="i-pad" viewBox="0 0 24 24"><path d="M6.5 8.5h11a4 4 0 0 1 3.9 4.9l-.8 3.4a2 2 0 0 1-3.4.9L14.5 15h-5l-2.7 2.7a2 2 0 0 1-3.4-.9l-.8-3.4a4 4 0 0 1 3.9-4.9z"/><path d="M8.2 10.8v3M6.7 12.3h3"/><circle cx="15.6" cy="11.6" r=".6" fill="currentColor"/><circle cx="17.4" cy="13.4" r=".6" fill="currentColor"/></symbol>
+      <symbol id="i-lantern" viewBox="0 0 24 24"><path d="M9 5.5h6M12 2.5v3"/><path d="M8 7.5h8l-1 10H9z"/><path d="M7 20.5h10M9.5 17.5v3M14.5 17.5v3"/><circle cx="12" cy="12.5" r="1.8" fill="currentColor" stroke="none"/></symbol>
+      <symbol id="i-lock" viewBox="0 0 24 24"><rect x="5" y="10.5" width="14" height="10" rx="2"/><path d="M8 10.5V7.5a4 4 0 0 1 8 0v3"/></symbol>
+    </defs>
+  </svg>
+
+  <!-- ===================== HUD ===================== -->
+  <header class="hud" id="hud">
+    <a class="brand" href="#prologue" aria-label="Back to the start">
+      <span class="brand-crest" aria-hidden="true">EK</span>
+      <span class="brand-name">Emil Kuli-Zade</span>
+    </a>
+
+    <nav class="journey" aria-label="Chapters">
+      <div class="journey-track" aria-hidden="true">
+        <span class="journey-fill"></span>
+        <span class="journey-token"></span>
+      </div>
+      <ol class="journey-stops">
+        <li><a href="#prologue" data-label="Prologue"><svg><use href="#i-door"/></svg><span class="sr-only">Prologue</span></a></li>
+        <li><a href="#hero" data-label="I · The Hero"><svg><use href="#i-shield"/></svg><span class="sr-only">Chapter I: The Hero, about me</span></a></li>
+        <li><a href="#quests" data-label="II · The Quests"><svg><use href="#i-scroll"/></svg><span class="sr-only">Chapter II: The Quests, projects</span></a></li>
+        <li><a href="#keep" data-label="III · The Keep"><svg><use href="#i-tower"/></svg><span class="sr-only">Chapter III: The Keep, IT and security career</span></a></li>
+        <li><a href="#party" data-label="IV · The Party"><svg><use href="#i-flag"/></svg><span class="sr-only">Chapter IV: The Party, where I fit in a studio</span></a></li>
+        <li><a href="#side-quests" data-label="V · Side Quests"><svg><use href="#i-quill"/></svg><span class="sr-only">Chapter V: Side Quests, art</span></a></li>
+        <li><a href="#tavern" data-label="Epilogue · The Tavern"><svg><use href="#i-mug"/></svg><span class="sr-only">Epilogue: The Tavern, contact</span></a></li>
+      </ol>
+    </nav>
+
+    <div class="hud-actions">
+      <button class="hud-btn" type="button" id="ach-btn" aria-label="Achievements">
+        <svg><use href="#i-trophy"/></svg><span class="hud-count" id="ach-count">0/8</span>
+      </button>
+      <button class="hud-btn" type="button" id="theme-btn" aria-label="Switch to night">
+        <svg class="when-day"><use href="#i-moon"/></svg>
+        <svg class="when-night"><use href="#i-sun"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- ===================== PROLOGUE ===================== -->
+    <section class="prologue" id="prologue" data-chapter>
+      <div class="scene" aria-hidden="true">
+        <svg class="sky-svg" viewBox="0 0 1440 900" preserveAspectRatio="xMaxYMin slice">
+          <defs>
+            <radialGradient id="g-glow" cx="50%" cy="50%" r="50%">
+              <stop offset="0" stop-color="var(--glow)" stop-opacity=".5"/>
+              <stop offset="1" stop-color="var(--glow)" stop-opacity="0"/>
+            </radialGradient>
+            <mask id="m-moon"><circle cx="1230" cy="230" r="34" fill="#fff"/><circle cx="1247" cy="219" r="30" fill="#000"/></mask>
+          </defs>
+          <g class="layer stars" data-depth="0.06"></g>
+          <g class="layer sky-body" data-depth="0.1">
+            <circle class="sky-halo" cx="1230" cy="230" r="130" fill="url(#g-glow)"/>
+            <g class="sun"><circle cx="1230" cy="230" r="40"/></g>
+            <g class="moon"><circle cx="1230" cy="230" r="34" mask="url(#m-moon)"/></g>
+          </g>
+          <g class="layer clouds" data-depth="0.14">
+            <path class="cloud c1" d="M180 300h140a24 24 0 0 0-22-24 30 30 0 0 0-56-12 22 22 0 0 0-40 10 18 18 0 0 0-22 26z"/>
+            <path class="cloud c2" d="M640 200h110a20 20 0 0 0-18-20 26 26 0 0 0-48-10 18 18 0 0 0-32 8 15 15 0 0 0-12 22z"/>
+          </g>
+        </svg>
+        <!-- Landscape: hills run far past the viewBox so wide screens never see an edge. -->
+        <svg class="scene-svg" id="scene-svg" viewBox="0 130 1440 510" preserveAspectRatio="xMidYMax meet">
+          <g class="layer" data-depth="0.22">
+            <path class="hill-far" d="M-1600 380C-1100 340-500 420 0 400C160 352 330 360 480 372S760 380 900 352S1040 312 1140 316S1300 346 1440 344C1900 330 2400 400 3040 370V640H-1600Z"/>
+            <!-- castle silhouette on the far hill -->
+            <g class="castle" transform="translate(200 4) translate(934 324) scale(1.2) translate(-934 -324)">
+              <path d="M852 324V244h-10v-14l18-30 18 30v14h-10v24h20v-46h-8l-8-12 12-40 12 40-8 12h-8v46h18v-58h-6v-16h8v8h8v-8h8v8h8v-8h8v16h-6v58h16v-32h-8l20-34 20 34h-8v32h10v42z"/>
+              <path class="flag" d="M890 170v-26l18 7-18 7"/>
+              <path class="flag" d="M934 182v-22l14 6-14 6"/>
+              <rect class="win" x="883" y="262" width="5" height="9" rx="2.5"/>
+              <rect class="win" x="926" y="250" width="5" height="9" rx="2.5"/>
+              <rect class="win" x="940" y="250" width="5" height="9" rx="2.5"/>
+              <rect class="win" x="967" y="290" width="5" height="8" rx="2.5"/>
+              <rect class="win" x="857" y="268" width="4" height="8" rx="2"/>
+              <path class="gate" d="M926 324v-18a8 8 0 0 1 16 0v18z"/>
+            </g>
+          </g>
+          <g class="layer" data-depth="0.4">
+            <path class="hill-mid" d="M-1600 470C-1000 430-500 500 0 474C150 440 320 446 470 462S760 500 930 480 1260 432 1440 452C1900 480 2500 430 3040 460V640H-1600Z"/>
+            <g class="trees">
+              <path d="M96 470l14-40 14 40zM124 466l11-30 11 30zM70 474l10-26 10 26z"/>
+              <path d="M1210 448l14-42 14 42zM1238 446l11-32 11 32zM1188 452l10-26 10 26zM1330 446l12-34 12 34z"/>
+              <path d="M560 470l9-26 9 26zM582 472l7-20 7 20z"/>
+            </g>
+          </g>
+          <g class="layer" data-depth="0.7">
+            <path class="hill-near" d="M-1600 560C-1000 590-500 520 0 566C200 528 420 540 620 560S1060 604 1240 572 1400 546 1440 548C2000 560 2500 600 3040 550V640H-1600Z"/>
+            <path class="road" d="M1128 330C1128 362 1060 384 960 404S700 440 700 480 780 530 760 580 690 630 660 660H770C800 620 860 590 850 548S770 500 800 470 1010 428 1100 400 1142 352 1140 330Z"/>
+            <g class="trees near">
+              <circle cx="300" cy="530" r="22"/><path d="M300 548v24"/>
+              <circle cx="342" cy="540" r="15"/><path d="M342 552v18"/>
+              <circle cx="1120" cy="566" r="20"/><path d="M1120 582v20"/>
+            </g>
+          </g>
+        </svg>
+        <canvas class="fireflies" id="fireflies"></canvas>
+      </div>
+
+      <div class="prologue-inner">
+        <p class="eyebrow reveal">A portfolio in six chapters</p>
+        <h1 class="reveal">Emil Kuli-Zade</h1>
+        <p class="role-line reveal">Infrastructure &amp; security engineer <span aria-hidden="true">·</span> Game developer</p>
+        <p class="story reveal">
+          <span class="dropcap" aria-hidden="true">O</span><span class="sr-only">O</span>nce upon a time, I made Flash games played by over a million people.
+          Then the road wound through more than a decade of IT infrastructure and cybersecurity, keeping systems standing and gates locked for high-profile enterprise clients.
+          Now I'm back where the story began, with a Games Development degree and a bag full of tools.
+        </p>
+        <ul class="meta reveal">
+          <li><svg><use href="#i-pin"/></svg>Southbank, Melbourne</li>
+          <li><svg><use href="#i-key"/></svg>Full working rights in Australia</li>
+        </ul>
+        <div class="cta-row reveal">
+          <a class="btn btn-primary" href="#hero"><svg><use href="#i-down"/></svg>Begin the journey</a>
+          <button class="btn btn-ghost" type="button" data-open-short><svg><use href="#i-book"/></svg>Read the short version</button>
+        </div>
+      </div>
+      <div class="scene-space" aria-hidden="true"></div>
+    </section>
+
+    <!-- ===================== I · THE HERO ===================== -->
+    <section class="chapter" id="hero" data-chapter>
+      <div class="trail" aria-hidden="true"><svg viewBox="0 0 200 110" preserveAspectRatio="none"><path d="M100 0C40 30 160 70 100 110"/></svg></div>
+      <div class="container">
+        <header class="chapter-head reveal">
+          <p class="eyebrow">Chapter I</p>
+          <h2>The Hero</h2>
+          <p class="chapter-sub">About me</p>
+        </header>
+
+        <div class="sheet">
+          <article class="sheet-card reveal">
+            <div class="crest" aria-hidden="true">
+              <svg viewBox="0 0 120 136"><path d="M60 4l50 18v40c0 32-21 57-50 70C31 119 10 94 10 62V22z"/><path class="crest-inner" d="M60 14l40 14v34c0 26-17 47-40 58-23-11-40-32-40-58V28z"/></svg>
+              <span class="crest-letters">EK</span>
+              <span class="level" title="14+ years in IT"><small>Lvl</small>14</span>
+            </div>
+            <h3 class="sheet-name">Emil Kuli-Zade</h3>
+            <p class="sheet-class">
+              <span class="class-tag" tabindex="0" data-tip="Builds tools, systems and games">Artificer</span>
+              <span aria-hidden="true">&amp;</span>
+              <span class="class-tag" tabindex="0" data-tip="Nine years in cybersecurity">Warden</span>
+            </p>
+            <p class="sheet-bio">
+              I design, deploy and secure the systems that teams depend on, and I make games.
+              In 2026 I finished a BSc in Computer Science, specialising in Games Development, at Goldsmiths, University of London, alongside a full-time job.
+            </p>
+            <dl class="stats">
+              <div><dt>Years in IT</dt><dd>14+</dd></div>
+              <div><dt>In cybersecurity</dt><dd>9</dd></div>
+              <div><dt>Players reached</dt><dd>1M+</dd></div>
+              <div><dt>Trainings led</dt><dd>15+</dd></div>
+            </dl>
+          </article>
+
+          <div class="sheet-side">
+            <section class="panel reveal" aria-labelledby="perks-title">
+              <h3 class="panel-title" id="perks-title"><svg><use href="#i-sparkle"/></svg>Perks</h3>
+              <ul class="perks">
+                <li><b>Shipped to a million.</b> My Flash mini-games reached over 1,000,000 players. I know what “live” means.</li>
+                <li><b>Calm in a crisis.</b> Incident response, critical outages, clients waiting on the line. Steady hands, clear notes.</li>
+                <li><b>Bridge between worlds.</b> I translate between clients and developers, and I'll dive into the code when that's what it takes.</li>
+                <li><b>Teacher.</b> 15+ training sessions, plus an onboarding programme that considerably cut ramp-up time for new engineers.</li>
+                <li><b>Double quest.</b> Earned a CS degree while working full-time as a lead engineer.</li>
+              </ul>
+            </section>
+
+            <section class="panel inventory reveal" aria-labelledby="inv-title">
+              <div class="inv-head">
+                <h3 class="panel-title" id="inv-title"><svg><use href="#i-key"/></svg>Inventory</h3>
+                <div class="tabs" role="tablist" aria-label="Inventory bags">
+                  <button role="tab" type="button" id="tab-game" aria-controls="bag-game" aria-selected="true">Game-making kit</button>
+                  <button role="tab" type="button" id="tab-studio" aria-controls="bag-studio" aria-selected="false" tabindex="-1">Studio-keeping kit</button>
+                </div>
+              </div>
+
+              <div class="bag" id="bag-game" role="tabpanel" aria-labelledby="tab-game">
+                <ul class="slots">
+                  <li><button type="button" class="slot" data-name="Unity &amp; C#" data-type="Engine" data-desc="My main engine through university, including editor tooling and VR for Meta Quest 3." data-found="ToDonegeon · VR Barista · City of Stars">Un</button></li>
+                  <li><button type="button" class="slot" data-name="Unreal Engine &amp; C++" data-type="Engine" data-desc="Personal projects: gameplay components, damage types, custom movement and a wall-run. Where I'm growing next, in tools and gameplay." data-found="The Workshop">UE</button></li>
+                  <li><button type="button" class="slot" data-name="Procedural generation" data-type="Technique" data-desc="BSP partitioning, cellular automata, random walks, connectivity validation and expressive-range analysis." data-found="ToDonegeon">PG</button></li>
+                  <li><button type="button" class="slot" data-name="Game AI" data-type="Technique" data-desc="Behaviour trees, line of sight and grid pathfinding, plus university coursework in artificial intelligence." data-found="ToDonegeon">AI</button></li>
+                  <li><button type="button" class="slot" data-name="GLSL &amp; shaders" data-type="Graphics" data-desc="Shader-driven visuals, and coursework in 3D graphics and animation with GLSL and Unity." data-found="Music Visualiser">GL</button></li>
+                  <li><button type="button" class="slot" data-name="Virtual reality" data-type="Platform" data-desc="Unity XR on Meta Quest 3: grabbing, pouring and physical interactions that need to feel right." data-found="VR Barista">VR</button></li>
+                  <li><button type="button" class="slot" data-name="JavaScript &amp; ActionScript 3" data-type="Language" data-desc="Shipped commercial Flash games in AS3. JavaScript for the web and p5.js." data-found="The First Quest · Music Visualiser">JS</button></li>
+                  <li><button type="button" class="slot" data-name="Blender &amp; 2D art" data-type="Craft" data-desc="Blender, Photoshop and Illustrator essentials, plus sketching for fun. Enough to speak an artist's language." data-found="Side Quests">Bl</button></li>
+                  <li><button type="button" class="slot" data-name="Music" data-type="Craft" data-desc="I compose piano music in Reaper with Kontakt and MIDI." data-found="Music Visualiser">♪</button></li>
+                </ul>
+              </div>
+              <div class="bag" id="bag-studio" role="tabpanel" aria-labelledby="tab-studio" hidden>
+                <ul class="slots">
+                  <li><button type="button" class="slot" data-name="Source control" data-type="Pipeline" data-desc="Git on the command line, GitLab and Perforce: branching, merging and keeping big repos healthy." data-found="City of Stars · Group-IB">Git</button></li>
+                  <li><button type="button" class="slot" data-name="Ansible &amp; Docker" data-type="Automation" data-desc="Repeatable deployments and containers. Configure it once, never by hand again." data-found="Group-IB, 20+ projects">An</button></li>
+                  <li><button type="button" class="slot" data-name="Bash &amp; Python" data-type="Scripting" data-desc="Glue scripts, automation and small tools that save people hours." data-found="Everywhere">Py</button></li>
+                  <li><button type="button" class="slot" data-name="Linux servers" data-type="Infrastructure" data-desc="LPI-certified Linux administration, from bare metal to production." data-found="Group-IB">Lx</button></li>
+                  <li><button type="button" class="slot" data-name="Windows Server &amp; Microsoft 365" data-type="Infrastructure" data-desc="Active Directory, GPO, Exchange and Microsoft 365 for growing teams." data-found="System administration">Win</button></li>
+                  <li><button type="button" class="slot" data-name="Networks" data-type="Infrastructure" data-desc="Network design, integration and troubleshooting for companies big and small." data-found="Every chapter of the Keep">Net</button></li>
+                  <li><button type="button" class="slot" data-name="Virtualisation &amp; hardware" data-type="Infrastructure" data-desc="VMware ESXi and Hyper-V, hardware servers, and once about 50 workstations rebuilt from salvaged parts." data-found="Group-IB · Work Systems">VM</button></li>
+                  <li><button type="button" class="slot" data-name="Cybersecurity" data-type="Security" data-desc="SOC analysis, threat hunting and digital forensics, certified by Group-IB. Nine years on the defending side." data-found="Group-IB">Sec</button></li>
+                  <li><button type="button" class="slot" data-name="Jira, Confluence &amp; cloud" data-type="Tooling" data-desc="Jira and Confluence administration, Azure and AWS essentials, project management and documentation." data-found="Group-IB">Jr</button></li>
+                </ul>
+              </div>
+
+              <div class="inv-detail" aria-live="polite">
+                <p class="inv-type" id="inv-type">Engine</p>
+                <p class="inv-name" id="inv-name">Unity &amp; C#</p>
+                <p class="inv-desc" id="inv-desc">My main engine through university, including editor tooling and VR for Meta Quest 3.</p>
+                <p class="inv-found"><span>Found in:</span> <span id="inv-found">ToDonegeon · VR Barista · City of Stars</span></p>
+              </div>
+            </section>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== II · THE QUESTS ===================== -->
+    <section class="chapter chapter-alt" id="quests" data-chapter>
+      <div class="trail" aria-hidden="true"><svg viewBox="0 0 200 110" preserveAspectRatio="none"><path d="M100 0C160 30 40 70 100 110"/></svg></div>
+      <div class="container">
+        <header class="chapter-head reveal">
+          <p class="eyebrow">Chapter II</p>
+          <h2>The Quests</h2>
+          <p class="chapter-sub">Projects I've built</p>
+          <p class="chapter-intro">Open a scroll to read the full tale. Hover a card for a moving preview.</p>
+          <p class="quest-progress" id="quest-progress" aria-live="polite"><span class="qp-bar"><span></span></span><span class="qp-text">0 of 6 scrolls read</span></p>
+        </header>
+
+        <div class="quest-board">
+          <article class="quest quest-featured reveal" data-quest="todonegeon">
+            <div class="quest-media">
+              <img src="assets/media/quests/todonegeon-cover.jpg" alt="" loading="lazy" width="960" height="540">
+              <video muted loop playsinline preload="none" data-src="assets/media/quests/todonegeon-preview.mp4"></video>
+              <span class="media-badge"><svg><use href="#i-play"/></svg>Video</span>
+            </div>
+            <div class="quest-body">
+              <p class="quest-kicker">Final project · BSc · 2026</p>
+              <h3><button type="button" class="quest-open">ToDonegeon</button></h3>
+              <p class="quest-tagline">A productivity roguelike: real-life tasks earn XP for descending into procedurally generated dungeons. I built the generator and the tools that prove it works.</p>
+              <ul class="tags"><li>Unity</li><li>C#</li><li>Procedural generation</li><li>Editor tooling</li></ul>
+              <span class="quest-cta">Open the scroll <svg><use href="#i-right"/></svg></span>
+            </div>
+            <span class="seal" aria-hidden="true">Read</span>
+          </article>
+
+          <article class="quest reveal" data-quest="vr-barista">
+            <div class="quest-media">
+              <img src="assets/media/quests/vr-barista-cover.jpg" alt="" loading="lazy" width="960" height="540">
+              <video muted loop playsinline preload="none" data-src="assets/media/quests/vr-barista-preview.mp4"></video>
+              <span class="media-badge"><svg><use href="#i-play"/></svg>Video</span>
+            </div>
+            <div class="quest-body">
+              <p class="quest-kicker">University · VR</p>
+              <h3><button type="button" class="quest-open">VR Barista</button></h3>
+              <p class="quest-tagline">A Meta Quest 3 trainer for steaming milk and pouring latte art.</p>
+              <ul class="tags"><li>Unity</li><li>XR</li><li>Procedural audio</li></ul>
+              <span class="quest-cta">Open the scroll <svg><use href="#i-right"/></svg></span>
+            </div>
+            <span class="seal" aria-hidden="true">Read</span>
+          </article>
+
+          <article class="quest reveal" data-quest="city-of-stars">
+            <div class="quest-media cover-stars">
+              <svg viewBox="0 0 320 180" aria-hidden="true">
+                <rect width="320" height="180" fill="#1c1942"/>
+                <g fill="#f3e3b5"><circle cx="24" cy="20" r="1.2"/><circle cx="70" cy="44" r=".9"/><circle cx="118" cy="16" r="1.4"/><circle cx="168" cy="38" r="1"/><circle cx="214" cy="14" r="1.2"/><circle cx="262" cy="34" r=".9"/><circle cx="300" cy="18" r="1.3"/><circle cx="44" cy="66" r=".8"/><circle cx="240" cy="60" r="1"/></g>
+                <path d="M-10 132C40 120 70 150 120 138S190 112 236 124 300 140 330 128" fill="none" stroke="#e7b75f" stroke-width="2" stroke-dasharray="5 6" opacity=".75"/>
+                <g fill="#ef8d9b"><circle cx="38" cy="126" r="3.4"/><circle cx="92" cy="141" r="3"/><circle cx="150" cy="132" r="3.4"/></g>
+                <path d="M0 150h320v30H0z" fill="#141233"/>
+                <g fill="#2b2760" stroke="#8a84d6" stroke-width="1.2">
+                  <path d="M40 150v-34h14v34z"/><path d="M110 150v-50h16v50z"/><path d="M196 150v-40h14v40z"/>
+                </g>
+                <g fill="#e7b75f"><path d="M47 104l2.4 5 5.4.6-4 3.6 1.1 5.3-4.9-2.7-4.8 2.7 1-5.3-4-3.6 5.4-.6z"/><path d="M118 86l2.6 5.4 5.8.7-4.3 3.9 1.2 5.7-5.3-2.9-5.2 2.9 1.1-5.7-4.2-3.9 5.8-.7z"/><path d="M203 97l2.4 5 5.4.6-4 3.6 1.1 5.3-4.9-2.7-4.8 2.7 1-5.3-4-3.6 5.4-.6z"/></g>
+                <circle cx="282" cy="128" r="18" fill="#e7b75f" opacity=".18"/><circle cx="282" cy="128" r="9" fill="#e7b75f"/>
+              </svg>
+            </div>
+            <div class="quest-body">
+              <p class="quest-kicker">Team project · 2026</p>
+              <h3><button type="button" class="quest-open">City of Stars</button></h3>
+              <p class="quest-tagline">A tower-defence game made by a student team. I took on waves, enemies, the economy, and steering branches into release.</p>
+              <ul class="tags"><li>Unity</li><li>C#</li><li>Teamwork</li><li>GitLab</li></ul>
+              <span class="quest-cta">Open the scroll <svg><use href="#i-right"/></svg></span>
+            </div>
+            <span class="seal" aria-hidden="true">Read</span>
+          </article>
+
+          <article class="quest reveal" data-quest="music-visualiser">
+            <div class="quest-media">
+              <img src="assets/media/quests/music-visualiser-cover.jpg" alt="" loading="lazy" width="960" height="540">
+              <video muted loop playsinline preload="none" data-src="assets/media/quests/music-visualiser-preview.mp4"></video>
+              <span class="media-badge"><svg><use href="#i-play"/></svg>Playable</span>
+            </div>
+            <div class="quest-body">
+              <p class="quest-kicker">Coursework · p5.js + GLSL</p>
+              <h3><button type="button" class="quest-open">Music Visualiser</button></h3>
+              <p class="quest-tagline">Shader-lit visuals dancing to my own piano compositions. You can play it right here in the browser.</p>
+              <ul class="tags"><li>JavaScript</li><li>GLSL</li><li>Audio FFT</li></ul>
+              <span class="quest-cta">Open the scroll <svg><use href="#i-right"/></svg></span>
+            </div>
+            <span class="seal" aria-hidden="true">Read</span>
+          </article>
+
+          <article class="quest reveal" data-quest="first-quest">
+            <div class="quest-media cover-laurel">
+              <svg viewBox="0 0 320 180" aria-hidden="true">
+                <rect width="320" height="180" class="cv-bg"/>
+                <g class="cv-laurel" fill="none" stroke-width="2.2" stroke-linecap="round">
+                  <path d="M118 140C96 122 92 88 108 58"/><path d="M202 140c22-18 26-52 10-82"/>
+                  <g class="cv-leaf"><path d="M104 128c-10-2-14-9-14-15 8 1 13 7 14 15z"/><path d="M98 108c-10 0-15-6-16-12 8 0 14 5 16 12z"/><path d="M98 88c-9-3-12-10-11-16 7 2 11 9 11 16z"/><path d="M104 70c-8-5-9-12-7-17 6 3 9 10 7 17z"/></g>
+                  <g class="cv-leaf"><path d="M216 128c10-2 14-9 14-15-8 1-13 7-14 15z"/><path d="M222 108c10 0 15-6 16-12-8 0-14 5-16 12z"/><path d="M222 88c9-3 12-10 11-16-7 2-11 9-11 16z"/><path d="M216 70c8-5 9-12 7-17-6 3-9 10-7 17z"/></g>
+                </g>
+                <text x="160" y="106" text-anchor="middle" class="cv-big">1M+</text>
+                <text x="160" y="128" text-anchor="middle" class="cv-small">PLAYERS · 2012–13</text>
+              </svg>
+            </div>
+            <div class="quest-body">
+              <p class="quest-kicker">Commercial · 2012–2013</p>
+              <h3><button type="button" class="quest-open">The First Quest</button></h3>
+              <p class="quest-tagline">Shipped Flash games for social networks, including mini-games for over a million players.</p>
+              <ul class="tags"><li>ActionScript 3</li><li>Flash</li><li>Live updates</li></ul>
+              <span class="quest-cta">Open the scroll <svg><use href="#i-right"/></svg></span>
+            </div>
+            <span class="seal" aria-hidden="true">Read</span>
+          </article>
+
+          <article class="quest quest-wide reveal" data-quest="workshop">
+            <div class="quest-media cover-anvil">
+              <svg viewBox="0 0 320 180" aria-hidden="true">
+                <rect width="320" height="180" class="cv-bg"/>
+                <g class="cv-line" fill="none" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round">
+                  <path d="M100 92h118c0 16-18 26-42 28v16h18v12h-74v-12h18v-16c-20-2-36-10-38-28z"/>
+                  <path d="M100 92c-14 0-24-6-28-14h28z"/>
+                  <path d="M186 50l26 26M199 63l-30 30"/><path d="M180 44l12-8 26 26-8 12z"/>
+                </g>
+                <g class="cv-spark"><path d="M150 72l3-12M162 74l8-9M140 76l-6-9"/></g>
+              </svg>
+            </div>
+            <div class="quest-body">
+              <p class="quest-kicker">Personal · ongoing</p>
+              <h3><button type="button" class="quest-open">The Workshop</button></h3>
+              <p class="quest-tagline">Unreal Engine C++ and Unity experiments, where I practise mechanics until I understand them properly.</p>
+              <ul class="tags"><li>Unreal Engine</li><li>C++</li><li>Unity</li></ul>
+              <span class="quest-cta">Open the scroll <svg><use href="#i-right"/></svg></span>
+            </div>
+            <span class="seal" aria-hidden="true">Read</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== III · THE KEEP ===================== -->
+    <section class="chapter" id="keep" data-chapter>
+      <div class="trail" aria-hidden="true"><svg viewBox="0 0 200 110" preserveAspectRatio="none"><path d="M100 0C40 30 160 70 100 110"/></svg></div>
+      <div class="container">
+        <header class="chapter-head reveal">
+          <p class="eyebrow">Chapter III</p>
+          <h2>The Keep</h2>
+          <p class="chapter-sub">My IT &amp; security career</p>
+          <p class="chapter-intro">For more than ten years I've been the one who keeps the castle standing: designing, deploying and securing infrastructure, then leading the engineers who do it. Climb the tower, floor by floor.</p>
+        </header>
+
+        <div class="keep-grid">
+          <div class="tower reveal">
+            <div class="tower-top" aria-hidden="true">
+              <svg viewBox="0 0 220 64"><path d="M30 64V26h20v12h20V26h20v12h20V26h20v12h20V26h20v12h20V26h20v38"/><path d="M110 26V2l26 8-26 8"/></svg>
+            </div>
+            <details class="floor" name="keep" open>
+              <summary>
+                <span class="floor-no">4</span>
+                <span class="floor-main"><span class="floor-role">Lead Implementation Engineer</span><span class="floor-org">Group-IB · APAC, MEA &amp; AUNZ</span></span>
+                <span class="floor-years">2020 – now</span>
+              </summary>
+              <ul>
+                <li>Lead an international team of integration engineers, supporting customers across regions on architecture and technical matters.</li>
+                <li>Own end-to-end delivery of cybersecurity implementation projects, including coordination and all product documentation.</li>
+                <li>Act as the bridge between clients and the development team, customising the product and diving into the code where needed.</li>
+                <li>Delivered 15+ training sessions for clients and partners, and built a training programme for engineers, with LPI certification, that considerably reduced onboarding time.</li>
+              </ul>
+            </details>
+            <details class="floor" name="keep">
+              <summary>
+                <span class="floor-no">3</span>
+                <span class="floor-main"><span class="floor-role">Senior Integration Engineer</span><span class="floor-org">Group-IB</span></span>
+                <span class="floor-years">2018 – 2019</span>
+              </summary>
+              <ul>
+                <li>Designed, integrated and troubleshot network infrastructure for client deployments.</li>
+                <li>Integrated a complex MXDR product into client infrastructures; in 90% of incident-response projects the threat source was traced and the damage remediated.</li>
+                <li>Helped recruit, onboard and train integration engineers, contributing to a 10% rise in employee satisfaction.</li>
+                <li>Turned client integration requirements into technical specifications and actionable plans.</li>
+              </ul>
+            </details>
+            <details class="floor" name="keep">
+              <summary>
+                <span class="floor-no">2</span>
+                <span class="floor-main"><span class="floor-role">Integration Engineer</span><span class="floor-org">Group-IB</span></span>
+                <span class="floor-years">2017 – 2018</span>
+              </summary>
+              <ul>
+                <li>Delivered 20+ projects (Git, Ansible, Docker, ESXi, hardware servers) on time and to spec for global clients.</li>
+                <li>Resolved critical integration issues for a high-profile client, cutting system downtime by 50%.</li>
+                <li>Integrated security solutions into client environments, keeping them interoperable and fast.</li>
+              </ul>
+            </details>
+            <details class="floor" name="keep">
+              <summary>
+                <span class="floor-no">1</span>
+                <span class="floor-main"><span class="floor-role">System Administrator</span><span class="floor-org">Social IT · Work Systems</span></span>
+                <span class="floor-years">2014 – 2017</span>
+              </summary>
+              <ul>
+                <li>First- and second-level support, plus Windows server and workstation administration, for 10+ client companies.</li>
+                <li>Administered domains and networks, including security measures and backups, and set up networks for new and growing companies.</li>
+                <li>Rebuilt about 50 working workstations from old and broken equipment; installed an Asterisk VoIP system with 50+ stations.</li>
+              </ul>
+            </details>
+            <div class="tower-base" aria-hidden="true"></div>
+          </div>
+
+          <div class="keep-side">
+            <section class="panel warden reveal" aria-labelledby="warden-title">
+              <h3 class="panel-title" id="warden-title"><svg><use href="#i-shield"/></svg>What a Warden brings to a studio</h3>
+              <ul class="ticks">
+                <li>Build machines and pipelines that don't fall over the night before a milestone.</li>
+                <li>Source control that copes with huge binary assets: Git, GitLab, Perforce.</li>
+                <li>Networks, identity, VPN and backups for on-site and remote teammates.</li>
+                <li>Security that keeps unreleased builds where they belong. Leaks are a studio's dragon.</li>
+                <li>Docs and training, so knowledge doesn't live in one person's head.</li>
+              </ul>
+            </section>
+
+            <section class="panel reveal" aria-labelledby="seals-title">
+              <h3 class="panel-title" id="seals-title"><svg><use href="#i-sparkle"/></svg>Seals &amp; certifications</h3>
+              <ul class="seals">
+                <li><span class="wax">LPI</span><span>Linux Administration<small>LPI · 2020</small></span></li>
+                <li><span class="wax">SOC</span><span>SOC Analyst<small>Group-IB · 2019</small></span></li>
+                <li><span class="wax">TH</span><span>Threat Hunter<small>Group-IB · 2019</small></span></li>
+                <li><span class="wax">DF</span><span>Digital Forensics Analyst<small>Group-IB · 2019</small></span></li>
+                <li><span class="wax">A+</span><span>CompTIA A+<small>CompTIA · 2023</small></span></li>
+                <li><span class="wax">IT</span><span>Google IT Support<small>Google · 2023</small></span></li>
+              </ul>
+            </section>
+
+            <button class="minigame-card reveal" type="button" id="wall-open">
+              <span class="mg-icon"><svg><use href="#i-pad"/></svg></span>
+              <span class="mg-text">
+                <span class="mg-kicker">Mini-game · 30 seconds</span>
+                <span class="mg-title">Hold the Wall</span>
+                <span class="mg-desc">Cracks are vulnerabilities. Patch them before the goblins get in.</span>
+              </span>
+              <span class="mg-play"><svg><use href="#i-play"/></svg></span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== IV · THE PARTY ===================== -->
+    <section class="chapter chapter-alt" id="party" data-chapter>
+      <div class="trail" aria-hidden="true"><svg viewBox="0 0 200 110" preserveAspectRatio="none"><path d="M100 0C160 30 40 70 100 110"/></svg></div>
+      <div class="container">
+        <header class="chapter-head reveal">
+          <p class="eyebrow">Chapter IV</p>
+          <h2>The Party</h2>
+          <p class="chapter-sub">Where I fit in a studio</p>
+          <p class="chapter-intro">A game studio is an adventuring party, and every quest needs more than one class. This is what I'd bring to yours. Flip a card for the proof.</p>
+        </header>
+
+        <ul class="party">
+          <li class="reveal">
+            <div class="flip">
+              <div class="flip-face flip-front">
+                <span class="party-emblem"><svg><use href="#i-tower"/></svg></span>
+                <p class="party-kicker">Infrastructure · build · security</p>
+                <h3>The Keeper</h3>
+                <p>Keep the studio's network, build machines, source control and identity reliable and secure, so developers spend their days on the game rather than the plumbing.</p>
+              </div>
+              <div class="flip-face flip-back">
+                <h3>Proof</h3>
+                <ul class="ticks">
+                  <li>14+ years in IT, 9 in cybersecurity</li>
+                  <li>Linux and Windows infrastructure for international clients such as Dyson and DHL</li>
+                  <li>Git, GitLab, Perforce, Ansible, Docker, VMware, Hyper-V</li>
+                  <li>SOC, threat hunting and forensics, Group-IB certified</li>
+                </ul>
+              </div>
+            </div>
+            <button type="button" class="flip-btn" aria-pressed="false"><span class="sr-only">The Keeper: </span><span class="flip-label">Show proof</span></button>
+          </li>
+          <li class="reveal">
+            <div class="flip">
+              <div class="flip-face flip-front">
+                <span class="party-emblem"><svg><use href="#i-hammer"/></svg></span>
+                <p class="party-kicker">Internal tools · automation</p>
+                <h3>The Toolsmith</h3>
+                <p>Build the small tools that save a team hours every week: editor extensions, scripts, analysis tools and the pipelines between them.</p>
+              </div>
+              <div class="flip-face flip-back">
+                <h3>Proof</h3>
+                <ul class="ticks">
+                  <li>Unity editor tooling for expressive-range analysis in ToDonegeon</li>
+                  <li>Unit-tested generator code, validated across hundreds of floors</li>
+                  <li>Automation in Python, Bash and Ansible</li>
+                  <li>Customised a security product's code to fit client needs</li>
+                </ul>
+              </div>
+            </div>
+            <button type="button" class="flip-btn" aria-pressed="false"><span class="sr-only">The Toolsmith: </span><span class="flip-label">Show proof</span></button>
+          </li>
+          <li class="reveal">
+            <div class="flip">
+              <div class="flip-face flip-front">
+                <span class="party-emblem"><svg><use href="#i-map"/></svg></span>
+                <p class="party-kicker">Gameplay · procedural systems</p>
+                <h3>The Worldbuilder</h3>
+                <p>Turn designs into systems that play well, and keep levelling up in Unity and Unreal Engine alongside the team.</p>
+              </div>
+              <div class="flip-face flip-back">
+                <h3>Proof</h3>
+                <ul class="ticks">
+                  <li>ToDonegeon's generation core and enemy AI</li>
+                  <li>Waves, spawning and economy in City of Stars</li>
+                  <li>VR interactions for Meta Quest 3</li>
+                  <li>Shipped Flash games to 1M+ players</li>
+                </ul>
+              </div>
+            </div>
+            <button type="button" class="flip-btn" aria-pressed="false"><span class="sr-only">The Worldbuilder: </span><span class="flip-label">Show proof</span></button>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ===================== V · SIDE QUESTS ===================== -->
+    <section class="chapter" id="side-quests" data-chapter>
+      <div class="trail" aria-hidden="true"><svg viewBox="0 0 200 110" preserveAspectRatio="none"><path d="M100 0C40 30 160 70 100 110"/></svg></div>
+      <div class="container">
+        <header class="chapter-head reveal">
+          <p class="eyebrow">Chapter V</p>
+          <h2>Side Quests</h2>
+          <p class="chapter-sub">Sketches, sculpts &amp; the obligatory donut</p>
+          <p class="chapter-intro">I draw and model a little: enough to speak an artist's language when building their tools. I also compose piano music, which you can hear in the <a href="#quests" data-quest-link="music-visualiser">Music Visualiser</a>.</p>
+        </header>
+
+        <ul class="gallery">
+          <li class="reveal"><button type="button" class="sketch" data-full="assets/media/sketches/orc.jpg" data-caption="Lok'tar ogar!"><img src="assets/media/sketches/orc-thumb.jpg" alt="Pencil-style digital sketch of a snarling orc" loading="lazy" width="480" height="640"></button></li>
+          <li class="reveal"><button type="button" class="sketch" data-full="assets/media/sketches/hand.jpg" data-caption="Dramatic hand"><img src="assets/media/sketches/hand-thumb.jpg" alt="Sketch of a tense, clawing hand" loading="lazy" width="480" height="640"></button></li>
+          <li class="reveal"><button type="button" class="sketch" data-full="assets/media/sketches/donut.jpg" data-caption="The obligatory Blender donut. Every 3D journey starts here." data-donut><img src="assets/media/sketches/donut-thumb.jpg" alt="Untextured 3D render of a glazed donut made in Blender" loading="lazy" width="640" height="360"></button></li>
+          <li class="reveal"><button type="button" class="sketch" data-full="assets/media/sketches/undead.jpg" data-caption="Undead head"><img src="assets/media/sketches/undead-thumb.jpg" alt="Sketch of a decaying undead skull" loading="lazy" width="480" height="640"></button></li>
+          <li class="reveal"><button type="button" class="sketch" data-full="assets/media/sketches/gesture.jpg" data-caption="Gesture studies: sorrow"><img src="assets/media/sketches/gesture-thumb.jpg" alt="Three quick gesture drawings of sorrowful poses" loading="lazy" width="291" height="640"></button></li>
+          <li class="reveal"><button type="button" class="sketch" data-full="assets/media/sketches/figure.jpg" data-caption="Figure"><img src="assets/media/sketches/figure-thumb.jpg" alt="Line drawing of a seated figure" loading="lazy" width="223" height="640"></button></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ===================== EPILOGUE · THE TAVERN ===================== -->
+    <section class="chapter chapter-alt tavern" id="tavern" data-chapter>
+      <div class="trail" aria-hidden="true"><svg viewBox="0 0 200 110" preserveAspectRatio="none"><path d="M100 0C160 30 40 70 100 110"/></svg></div>
+      <div class="container">
+        <header class="chapter-head reveal">
+          <p class="eyebrow">Epilogue</p>
+          <h2>The Tavern</h2>
+          <p class="chapter-sub">Let's talk</p>
+        </header>
+
+        <div class="tavern-card reveal">
+          <p class="tavern-lead">Every good story needs a next chapter. If your studio could use someone who keeps the castle standing and loves building what's inside it, I'd love to hear from you.</p>
+          <ul class="meta">
+            <li><svg><use href="#i-pin"/></svg>Southbank, Melbourne VIC</li>
+            <li><svg><use href="#i-key"/></svg>Full working rights across Australia</li>
+          </ul>
+
+          <div class="raven" id="raven">
+            <button class="btn btn-primary raven-btn" type="button" id="raven-btn"><svg><use href="#i-raven"/></svg>Send a raven</button>
+            <div class="raven-reveal" id="raven-reveal" hidden>
+              <a class="raven-mail" id="raven-mail" href="#"><svg><use href="#i-mail"/></svg><span id="raven-addr"></span></a>
+              <button class="btn btn-ghost btn-sm" type="button" id="raven-copy"><svg><use href="#i-copy"/></svg><span>Copy</span></button>
+            </div>
+            <noscript><p>Email: emil [at] kuli-zade.com</p></noscript>
+          </div>
+
+          <ul class="links">
+            <li><a href="https://www.linkedin.com/in/emil-kuli-zade/" target="_blank" rel="noopener">LinkedIn<svg><use href="#i-external"/></svg></a></li>
+            <li><a href="https://github.com/DunnoGuy" target="_blank" rel="noopener">GitHub<svg><use href="#i-external"/></svg></a></li>
+            <li><a href="https://gitlab.com/dunno_ue4" target="_blank" rel="noopener">GitLab: Unreal<svg><use href="#i-external"/></svg></a></li>
+            <li><a href="https://gitlab.com/dunno_unity" target="_blank" rel="noopener">GitLab: Unity<svg><use href="#i-external"/></svg></a></li>
+          </ul>
+          <p class="tavern-note" id="tavern-note" hidden></p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>© 2026 Emil Kuli-Zade · Made in Melbourne</p>
+    <p class="footer-hint">Psst… some old magic still works here. <kbd>↑</kbd><kbd>↑</kbd><kbd>↓</kbd><kbd>↓</kbd>…</p>
+    <a href="#prologue" class="footer-top">Back to the beginning <svg><use href="#i-down"/></svg></a>
+  </footer>
+
+  <!-- ===================== DIALOGS ===================== -->
+  <dialog class="scroll-dialog" id="dialog" aria-labelledby="dialog-title">
+    <div class="dialog-frame">
+      <button class="dialog-close" type="button" data-close aria-label="Close"><svg><use href="#i-close"/></svg></button>
+      <div class="dialog-body" id="dialog-body"></div>
+      <nav class="dialog-nav" id="dialog-nav" hidden>
+        <button type="button" class="btn btn-ghost btn-sm" data-step="-1"><svg><use href="#i-left"/></svg><span>Previous</span></button>
+        <span class="dialog-pos" id="dialog-pos"></span>
+        <button type="button" class="btn btn-ghost btn-sm" data-step="1"><span>Next</span><svg><use href="#i-right"/></svg></button>
+      </nav>
+    </div>
+  </dialog>
+
+  <div class="toasts" id="toasts" aria-live="polite"></div>
+
+  <!-- ===================== QUEST SCROLLS ===================== -->
+  <template id="q-todonegeon">
+    <p class="d-kicker">Final project · BSc Computer Science (Games Development) · 2026</p>
+    <h2 id="dialog-title">ToDonegeon</h2>
+    <p class="d-lead">A productivity roguelike. Tick off real-life tasks to earn XP, and use it to survive ever-deeper, procedurally generated dungeons.</p>
+    <div class="d-video"><video controls preload="none" playsinline poster="assets/media/quests/todonegeon-poster.jpg" src="assets/media/quests/todonegeon.mp4"></video></div>
+    <p>I built ToDonegeon solo in Unity, within a tight university scope and deadline. The focus was the generation core, and proving that it works.</p>
+    <h3>What I built</h3>
+    <ul class="ticks">
+      <li><b>A layered dungeon generator:</b> BSP partitioning for rooms, cellular automata for caves, corridors, loops and random walks, with a connectivity validator that guarantees every floor is fully reachable.</li>
+      <li><b>Difficulty that scales with depth:</b> a populator places enemies, chests and bosses according to per-depth difficulty profiles.</li>
+      <li><b>Editor tooling for expressive-range analysis:</b> generate hundreds of floors, measure metrics such as linearity and room density, and plot them as heatmaps and graphs.</li>
+      <li><b>Enemy AI</b> using a behaviour tree, line of sight and grid pathfinding.</li>
+      <li><b>Edit-mode unit tests</b> covering the generator: connectivity, corridors, loops and settings.</li>
+    </ul>
+    <figure class="d-figs">
+      <img src="assets/media/quests/todonegeon-heatmap.jpg" alt="Heatmap of generated floors plotted by linearity against room density" loading="lazy" width="1280" height="416">
+      <figcaption>Expressive range: how generated floors spread across linearity and room density.</figcaption>
+    </figure>
+    <figure class="d-figs">
+      <img src="assets/media/quests/todonegeon-difficulty.jpg" alt="Line chart: mean threat rises steadily with descent depth across 300 floors" loading="lazy" width="1200" height="768">
+      <figcaption>Difficulty check over 300 floors: mean threat rises with every level of depth, and every floor is valid.</figcaption>
+    </figure>
+    <ul class="tags"><li>Unity</li><li>C#</li><li>BSP</li><li>Cellular automata</li><li>Behaviour trees</li><li>Editor tooling</li><li>Unit tests</li></ul>
+    <p class="d-links"><a class="btn btn-primary btn-sm" href="https://github.com/DunnoGuy/ToDonegeon" target="_blank" rel="noopener">Source on GitHub<svg><use href="#i-external"/></svg></a></p>
+  </template>
+
+  <template id="q-vr-barista">
+    <p class="d-kicker">University project · VR development · Meta Quest 3</p>
+    <h2 id="dialog-title">VR Barista</h2>
+    <p class="d-lead">A prototype trainer for the trickiest part of a barista's day: steaming milk to the right temperature and texture, then pouring latte art.</p>
+    <div class="d-video"><video controls preload="none" playsinline poster="assets/media/quests/vr-barista-poster.jpg" src="assets/media/quests/vr-barista.mp4"></video></div>
+    <p>Built in Unity for Meta Quest 3, within the constraints of a university brief. The goal was a simulator you could practise with, not just look at.</p>
+    <h3>What I built</h3>
+    <ul class="ticks">
+      <li><b>Hands-on steaming:</b> grab the pitcher and steam the milk yourself with Quest controllers.</li>
+      <li><b>A live “Milk Steaming Trainer” board</b> that gives feedback on milk temperature and foam as you go.</li>
+      <li><b>Procedurally generated steaming sound</b>, rather than a looped sample.</li>
+      <li><b>Pouring latte art</b> into the cup once the milk is ready.</li>
+    </ul>
+    <p class="d-note">The video ends with a real steaming session for comparison.</p>
+    <ul class="tags"><li>Unity</li><li>C#</li><li>XR Interaction</li><li>Meta Quest 3</li><li>Procedural audio</li></ul>
+  </template>
+
+  <template id="q-city-of-stars">
+    <p class="d-kicker">Team project · University games team · 2026</p>
+    <h2 id="dialog-title">City of Stars</h2>
+    <p class="d-lead">A Unity tower-defence game built by a student team. Place towers in the build phase, then hold off waves of enemies marching on the Core.</p>
+    <h3>My part</h3>
+    <ul class="ticks">
+      <li><b>Waves &amp; spawning:</b> new wave types, spawners that register themselves, randomised waves, and a fix for waves ending too early.</li>
+      <li><b>Enemies:</b> waypoint movement towards the Core, a final rush when they reach it, and colliders tuned for big enemies.</li>
+      <li><b>Economy &amp; UI:</b> building costs and prices surfaced in the UI.</li>
+      <li><b>Turrets:</b> bullet and damage types, shooting prediction, explosions and sound.</li>
+      <li><b>Integration:</b> much of the merging of feature branches into release candidates, resolving conflicts on the way to the final release.</li>
+    </ul>
+    <p>Working on it felt a lot like the day job: many hands, one repo, a deadline, and someone needing to keep the branches tidy.</p>
+    <ul class="tags"><li>Unity</li><li>C#</li><li>GitLab</li><li>Branching &amp; merges</li><li>Teamwork</li></ul>
+    <p class="d-links"><a class="btn btn-primary btn-sm" href="https://gitlab.com/uol_gd_team3/cityofstars" target="_blank" rel="noopener">Source on GitLab<svg><use href="#i-external"/></svg></a></p>
+  </template>
+
+  <template id="q-music-visualiser">
+    <p class="d-kicker">University coursework · p5.js + GLSL</p>
+    <h2 id="dialog-title">Music Visualiser</h2>
+    <p class="d-lead">A browser music visualiser with shader-lit effects, set to piano pieces I composed myself.</p>
+    <div class="d-video"><video controls preload="none" playsinline poster="assets/media/quests/music-visualiser-poster.jpg" src="assets/media/quests/music-visualiser.mp4"></video></div>
+    <p>It started from a course template and grew into something of my own.</p>
+    <h3>What I built</h3>
+    <ul class="ticks">
+      <li><b>The “Glowing Moth”:</b> a creature that flies on the music's frequency energy, trailing particles, lit by a custom GLSL fragment shader.</li>
+      <li><b>A track navigator</b> that draws the song's waveform and lets you seek through it by clicking.</li>
+      <li><b>Refactored controls</b> into a proper singleton, with next-track and playback buttons.</li>
+      <li><b>The soundtrack:</b> my own piano compositions, recorded in Reaper with Kontakt.</li>
+    </ul>
+    <ul class="tags"><li>JavaScript</li><li>p5.js</li><li>GLSL</li><li>FFT</li><li>Reaper + Kontakt</li></ul>
+    <p class="d-links">
+      <a class="btn btn-primary btn-sm" href="play/visualiser/" target="_blank" rel="noopener"><svg><use href="#i-play"/></svg>Play it live</a>
+      <a class="btn btn-ghost btn-sm" href="https://gitlab.com/uol_cs/itp2_music_visualizer" target="_blank" rel="noopener">Source on GitLab<svg><use href="#i-external"/></svg></a>
+    </p>
+  </template>
+
+  <template id="q-first-quest">
+    <p class="d-kicker">Commercial · Pixeltales · 2012–2013</p>
+    <h2 id="dialog-title">The First Quest</h2>
+    <p class="d-lead">My first game-dev job: a remote team of freelancers making games for social networks.</p>
+    <h3>What I shipped</h3>
+    <ul class="ticks">
+      <li><b>“Tactics”:</b> built the entire client of this multiplayer game from scratch, including UI, game logic and performance optimisation.</li>
+      <li><b>Three mini-games inside “School of Beauty”</b>, at the time the most popular game on CIS social networks, with a combined audience of over 1,000,000 players.</li>
+      <li><b>Live updates</b> to released games: optimisation, new features and fixes driven by player feedback.</li>
+    </ul>
+    <p class="d-note">Flash has since passed into legend, so no footage survives. The lessons about players, performance and shipping did.</p>
+    <ul class="tags"><li>ActionScript 3.0</li><li>Flash</li><li>Multiplayer client</li><li>Live ops</li></ul>
+  </template>
+
+  <template id="q-workshop">
+    <p class="d-kicker">Personal projects · ongoing</p>
+    <h2 id="dialog-title">The Workshop</h2>
+    <p class="d-lead">Outside coursework I keep a workshop of small projects: practice, prototypes and mechanics I want to understand properly.</p>
+    <h3>On the workbench</h3>
+    <ul class="ticks">
+      <li><b>Unreal Engine C++:</b> a component-based shooter character with health and damage types (fire, cold), and a custom movement component.</li>
+      <li><b>A wall-running mechanic</b> in Unreal Engine.</li>
+      <li><b>Classic exercises</b> in UE C++: Snake and Arkanoid.</li>
+      <li><b>Unity:</b> turn-based tactics prototypes.</li>
+    </ul>
+    <p>Unreal tools and gameplay programming are where I'm heading next.</p>
+    <ul class="tags"><li>Unreal Engine</li><li>C++</li><li>Unity</li><li>C#</li></ul>
+    <p class="d-links">
+      <a class="btn btn-primary btn-sm" href="https://gitlab.com/dunno_ue4" target="_blank" rel="noopener">Unreal projects<svg><use href="#i-external"/></svg></a>
+      <a class="btn btn-ghost btn-sm" href="https://gitlab.com/dunno_unity" target="_blank" rel="noopener">Unity projects<svg><use href="#i-external"/></svg></a>
+    </p>
+  </template>
+
+  <template id="t-short">
+    <p class="d-kicker">For busy recruiters</p>
+    <h2 id="dialog-title">The short version</h2>
+    <dl class="short">
+      <div><dt>Who</dt><dd>IT infrastructure &amp; cybersecurity engineer: 14+ years in IT, 9 in cybersecurity, currently Lead Implementation Engineer at Group-IB. Plus a year of commercial game development (Flash/AS3, 1M+ players).</dd></div>
+      <div><dt>Education</dt><dd>BSc Computer Science, Games Development specialisation, Goldsmiths, University of London (2026), completed alongside full-time work.</dd></div>
+      <div><dt>Looking for</dt><dd>A role inside an Australian game studio, keeping the team's infrastructure, source control and builds reliable and secure, while growing into tools and gameplay programming.</dd></div>
+      <div><dt>Where</dt><dd>Southbank, Melbourne VIC · full working rights across Australia.</dd></div>
+      <div><dt>Game dev</dt><dd>Unity/C# (incl. VR), Unreal Engine/C++, procedural generation, GLSL, JavaScript, ActionScript 3.</dd></div>
+      <div><dt>Studio-keeping</dt><dd>Linux, Windows Server/AD/M365, networks, VMware/Hyper-V, Git/GitLab, Perforce, Ansible, Docker, Bash/Python, Jira/Confluence.</dd></div>
+      <div><dt>Security</dt><dd>SOC, threat hunting, digital forensics (Group-IB certified); LPI Linux; CompTIA A+.</dd></div>
+    </dl>
+    <p class="d-links">
+      <button class="btn btn-primary btn-sm" type="button" data-goto="tavern"><svg><use href="#i-raven"/></svg>Get in touch</button>
+      <a class="btn btn-ghost btn-sm" href="https://www.linkedin.com/in/emil-kuli-zade/" target="_blank" rel="noopener">LinkedIn<svg><use href="#i-external"/></svg></a>
+      <button class="btn btn-ghost btn-sm" type="button" data-goto="quests"><svg><use href="#i-scroll"/></svg>See the projects</button>
+    </p>
+  </template>
+
+  <template id="t-wall">
+    <p class="d-kicker">Mini-game · 30 seconds</p>
+    <h2 id="dialog-title">Hold the Wall</h2>
+    <div class="wall" id="wall">
+      <div class="wall-hud">
+        <span class="wall-score">Patched <b id="wall-score">0</b></span>
+        <span class="wall-hearts" id="wall-hearts" aria-label="3 hearts left"><svg><use href="#i-heart"/></svg><svg><use href="#i-heart"/></svg><svg><use href="#i-heart"/></svg></span>
+        <span class="wall-time"><b id="wall-time">30</b>s</span>
+      </div>
+      <div class="wall-grid" id="wall-grid"></div>
+      <div class="wall-overlay" id="wall-overlay">
+        <p class="wall-msg" id="wall-msg">Cracks are vulnerabilities. Goblins are… goblins.<br>Patch every crack before one slips through.</p>
+        <p class="wall-keys">Click, tap, or use the numpad <kbd>1</kbd>–<kbd>9</kbd>.</p>
+        <button class="btn btn-primary" type="button" id="wall-start"><svg><use href="#i-play"/></svg>Start the watch</button>
+        <p class="wall-best" id="wall-best"></p>
+      </div>
+    </div>
+  </template>
+
+  <template id="t-achievements">
+    <p class="d-kicker">Your progress</p>
+    <h2 id="dialog-title">Achievements</h2>
+    <ul class="ach-list" id="ach-list"></ul>
+    <p class="d-note">Progress is saved in this browser only. <button type="button" class="linklike" id="ach-reset">Reset progress</button></p>
+  </template>
+
+  <script src="assets/js/wall.js" defer></script>
+  <script src="assets/js/folio.js" defer></script>
+</body>
+</html>
